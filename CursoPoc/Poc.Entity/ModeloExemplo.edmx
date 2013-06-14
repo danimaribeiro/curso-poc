@@ -1,0 +1,1066 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Poc.Core.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="PocCoreStoreContainer">
+          <EntitySet Name="Clientes" EntityType="Poc.Core.Store.Clientes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FormasPagamento" EntityType="Poc.Core.Store.FormasPagamento" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Grupos" EntityType="Poc.Core.Store.Grupos" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ItensPedido" EntityType="Poc.Core.Store.ItensPedido" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Pedidos" EntityType="Poc.Core.Store.Pedidos" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Produtos" EntityType="Poc.Core.Store.Produtos" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Usuarios" EntityType="Poc.Core.Store.Usuarios" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Clientes_Usuarios" Association="Poc.Core.Store.FK_Clientes_Usuarios">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Clientes" EntitySet="Clientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Clientes_Usuarios1" Association="Poc.Core.Store.FK_Clientes_Usuarios1">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Clientes" EntitySet="Clientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Grupos_Usuarios" Association="Poc.Core.Store.FK_Grupos_Usuarios">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Grupos" EntitySet="Grupos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Grupos_Usuarios1" Association="Poc.Core.Store.FK_Grupos_Usuarios1">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Grupos" EntitySet="Grupos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItensPedido_Pedidos" Association="Poc.Core.Store.FK_ItensPedido_Pedidos">
+            <End Role="Pedidos" EntitySet="Pedidos" />
+            <End Role="ItensPedido" EntitySet="ItensPedido" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItensPedido_Produtos" Association="Poc.Core.Store.FK_ItensPedido_Produtos">
+            <End Role="Produtos" EntitySet="Produtos" />
+            <End Role="ItensPedido" EntitySet="ItensPedido" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItensPedido_Usuarios" Association="Poc.Core.Store.FK_ItensPedido_Usuarios">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="ItensPedido" EntitySet="ItensPedido" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItensPedido_Usuarios1" Association="Poc.Core.Store.FK_ItensPedido_Usuarios1">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="ItensPedido" EntitySet="ItensPedido" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pedidos_Clientes" Association="Poc.Core.Store.FK_Pedidos_Clientes">
+            <End Role="Clientes" EntitySet="Clientes" />
+            <End Role="Pedidos" EntitySet="Pedidos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pedidos_FormasPagamento" Association="Poc.Core.Store.FK_Pedidos_FormasPagamento">
+            <End Role="FormasPagamento" EntitySet="FormasPagamento" />
+            <End Role="Pedidos" EntitySet="Pedidos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pedidos_Usuarios" Association="Poc.Core.Store.FK_Pedidos_Usuarios">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Pedidos" EntitySet="Pedidos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pedidos_Usuarios1" Association="Poc.Core.Store.FK_Pedidos_Usuarios1">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Pedidos" EntitySet="Pedidos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Produtos_Grupos" Association="Poc.Core.Store.FK_Produtos_Grupos">
+            <End Role="Grupos" EntitySet="Grupos" />
+            <End Role="Produtos" EntitySet="Produtos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Produtos_Usuarios" Association="Poc.Core.Store.FK_Produtos_Usuarios">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Produtos" EntitySet="Produtos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Produtos_Usuarios1" Association="Poc.Core.Store.FK_Produtos_Usuarios1">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Produtos" EntitySet="Produtos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuarios_Usuarios" Association="Poc.Core.Store.FK_Usuarios_Usuarios">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Usuarios1" EntitySet="Usuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuarios_Usuarios1" Association="Poc.Core.Store.FK_Usuarios_Usuarios1">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Usuarios1" EntitySet="Usuarios" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Clientes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Cpf" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="Endereco" Type="nvarchar" MaxLength="50" />
+          <Property Name="DataNascimento" Type="datetime" />
+          <Property Name="DataCriacao" Type="datetime" Nullable="false" />
+          <Property Name="UltimaAtualizacao" Type="datetime" />
+          <Property Name="CriadoPor" Type="bigint" Nullable="false" />
+          <Property Name="AtualizadoPor" Type="bigint" />
+        </EntityType>
+        <EntityType Name="FormasPagamento">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Parcelas" Type="int" Nullable="false" />
+          <Property Name="DataCriacao" Type="datetime" Nullable="false" />
+          <Property Name="UltimaAtualizacao" Type="datetime" />
+          <Property Name="CriadoPor" Type="bigint" Nullable="false" />
+          <Property Name="AtualizadoPor" Type="bigint" />
+        </EntityType>
+        <EntityType Name="Grupos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="DataCriacao" Type="datetime" Nullable="false" />
+          <Property Name="UltimaAtualizacao" Type="datetime" />
+          <Property Name="CriadoPor" Type="bigint" Nullable="false" />
+          <Property Name="AtualizadoPor" Type="bigint" />
+        </EntityType>
+        <EntityType Name="ItensPedido">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Indice" Type="int" Nullable="false" />
+          <Property Name="ProdutoId" Type="bigint" Nullable="false" />
+          <Property Name="Quantidade" Type="numeric" Nullable="false" Scale="4" />
+          <Property Name="ValorBrutoUnitario" Type="numeric" Nullable="false" Scale="2" />
+          <Property Name="DescontoUnitario" Type="numeric" Nullable="false" Scale="2" />
+          <Property Name="ValorUnitario" Type="numeric" Nullable="false" Scale="2" />
+          <Property Name="DescontoFinal" Type="numeric" Nullable="false" Scale="2" />
+          <Property Name="ValorFinal" Type="numeric" Nullable="false" Scale="2" />
+          <Property Name="DataCriacao" Type="datetime" Nullable="false" />
+          <Property Name="UltimaAtualizacao" Type="datetime" />
+          <Property Name="CriadoPor" Type="bigint" Nullable="false" />
+          <Property Name="AtualizadoPor" Type="bigint" />
+          <Property Name="PedidoId" Type="bigint" />
+        </EntityType>
+        <EntityType Name="Pedidos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DataPedido" Type="datetime" Nullable="false" />
+          <Property Name="FormaPagamentoId" Type="bigint" Nullable="false" />
+          <Property Name="ClienteId" Type="bigint" Nullable="false" />
+          <Property Name="ValorTotal" Type="numeric" Nullable="false" Scale="4" />
+          <Property Name="Numero" Type="bigint" Nullable="false" />
+          <Property Name="DataCriacao" Type="datetime" Nullable="false" />
+          <Property Name="UltimaAtualizacao" Type="datetime" />
+          <Property Name="CriadoPor" Type="bigint" Nullable="false" />
+          <Property Name="AtualizadoPor" Type="bigint" />
+        </EntityType>
+        <EntityType Name="Produtos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="GrupoId" Type="bigint" Nullable="false" />
+          <Property Name="ValorVenda" Type="numeric" Nullable="false" Scale="2" />
+          <Property Name="QuantidadeEstoque" Type="numeric" Scale="4" />
+          <Property Name="DataCriacao" Type="datetime" Nullable="false" />
+          <Property Name="UltimaAtualizacao" Type="datetime" />
+          <Property Name="CriadoPor" Type="bigint" Nullable="false" />
+          <Property Name="AtualizadoPor" Type="bigint" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Usuario" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Senha" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="DataCriacao" Type="datetime" Nullable="false" />
+          <Property Name="UltimaAtualizacao" Type="datetime" />
+          <Property Name="CriadoPor" Type="bigint" />
+          <Property Name="ModificadorPor" Type="bigint" />
+        </EntityType>
+        <Association Name="FK_Clientes_Usuarios">
+          <End Role="Usuarios" Type="Poc.Core.Store.Usuarios" Multiplicity="1" />
+          <End Role="Clientes" Type="Poc.Core.Store.Clientes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Clientes">
+              <PropertyRef Name="CriadoPor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Clientes_Usuarios1">
+          <End Role="Usuarios" Type="Poc.Core.Store.Usuarios" Multiplicity="0..1" />
+          <End Role="Clientes" Type="Poc.Core.Store.Clientes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Clientes">
+              <PropertyRef Name="AtualizadoPor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Grupos_Usuarios">
+          <End Role="Usuarios" Type="Poc.Core.Store.Usuarios" Multiplicity="1" />
+          <End Role="Grupos" Type="Poc.Core.Store.Grupos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Grupos">
+              <PropertyRef Name="CriadoPor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Grupos_Usuarios1">
+          <End Role="Usuarios" Type="Poc.Core.Store.Usuarios" Multiplicity="0..1" />
+          <End Role="Grupos" Type="Poc.Core.Store.Grupos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Grupos">
+              <PropertyRef Name="AtualizadoPor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ItensPedido_Pedidos">
+          <End Role="Pedidos" Type="Poc.Core.Store.Pedidos" Multiplicity="0..1" />
+          <End Role="ItensPedido" Type="Poc.Core.Store.ItensPedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pedidos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ItensPedido">
+              <PropertyRef Name="PedidoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ItensPedido_Produtos">
+          <End Role="Produtos" Type="Poc.Core.Store.Produtos" Multiplicity="1" />
+          <End Role="ItensPedido" Type="Poc.Core.Store.ItensPedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Produtos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ItensPedido">
+              <PropertyRef Name="ProdutoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ItensPedido_Usuarios">
+          <End Role="Usuarios" Type="Poc.Core.Store.Usuarios" Multiplicity="1" />
+          <End Role="ItensPedido" Type="Poc.Core.Store.ItensPedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ItensPedido">
+              <PropertyRef Name="CriadoPor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ItensPedido_Usuarios1">
+          <End Role="Usuarios" Type="Poc.Core.Store.Usuarios" Multiplicity="0..1" />
+          <End Role="ItensPedido" Type="Poc.Core.Store.ItensPedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ItensPedido">
+              <PropertyRef Name="AtualizadoPor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pedidos_Clientes">
+          <End Role="Clientes" Type="Poc.Core.Store.Clientes" Multiplicity="1" />
+          <End Role="Pedidos" Type="Poc.Core.Store.Pedidos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clientes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Pedidos">
+              <PropertyRef Name="ClienteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pedidos_FormasPagamento">
+          <End Role="FormasPagamento" Type="Poc.Core.Store.FormasPagamento" Multiplicity="1" />
+          <End Role="Pedidos" Type="Poc.Core.Store.Pedidos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FormasPagamento">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Pedidos">
+              <PropertyRef Name="FormaPagamentoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pedidos_Usuarios">
+          <End Role="Usuarios" Type="Poc.Core.Store.Usuarios" Multiplicity="1" />
+          <End Role="Pedidos" Type="Poc.Core.Store.Pedidos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Pedidos">
+              <PropertyRef Name="CriadoPor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pedidos_Usuarios1">
+          <End Role="Usuarios" Type="Poc.Core.Store.Usuarios" Multiplicity="0..1" />
+          <End Role="Pedidos" Type="Poc.Core.Store.Pedidos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Pedidos">
+              <PropertyRef Name="AtualizadoPor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Produtos_Grupos">
+          <End Role="Grupos" Type="Poc.Core.Store.Grupos" Multiplicity="1" />
+          <End Role="Produtos" Type="Poc.Core.Store.Produtos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Grupos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Produtos">
+              <PropertyRef Name="GrupoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Produtos_Usuarios">
+          <End Role="Usuarios" Type="Poc.Core.Store.Usuarios" Multiplicity="1" />
+          <End Role="Produtos" Type="Poc.Core.Store.Produtos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Produtos">
+              <PropertyRef Name="CriadoPor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Produtos_Usuarios1">
+          <End Role="Usuarios" Type="Poc.Core.Store.Usuarios" Multiplicity="0..1" />
+          <End Role="Produtos" Type="Poc.Core.Store.Produtos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Produtos">
+              <PropertyRef Name="AtualizadoPor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Usuarios_Usuarios">
+          <End Role="Usuarios" Type="Poc.Core.Store.Usuarios" Multiplicity="0..1" />
+          <End Role="Usuarios1" Type="Poc.Core.Store.Usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Usuarios1">
+              <PropertyRef Name="CriadoPor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Usuarios_Usuarios1">
+          <End Role="Usuarios" Type="Poc.Core.Store.Usuarios" Multiplicity="0..1" />
+          <End Role="Usuarios1" Type="Poc.Core.Store.Usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Usuarios1">
+              <PropertyRef Name="ModificadorPor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Poc.Core" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="pocEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Clientes" EntityType="Poc.Core.Clientes" />
+          <EntitySet Name="FormasPagamento" EntityType="Poc.Core.FormasPagamento" />
+          <EntitySet Name="Grupos" EntityType="Poc.Core.Grupos" />
+          <EntitySet Name="ItensPedido" EntityType="Poc.Core.ItensPedido" />
+          <EntitySet Name="Pedidos" EntityType="Poc.Core.Pedidos" />
+          <EntitySet Name="Produtos" EntityType="Poc.Core.Produtos" />
+          <EntitySet Name="Usuarios" EntityType="Poc.Core.Usuarios" />
+          <AssociationSet Name="FK_Clientes_Usuarios" Association="Poc.Core.FK_Clientes_Usuarios">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Clientes" EntitySet="Clientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Clientes_Usuarios1" Association="Poc.Core.FK_Clientes_Usuarios1">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Clientes" EntitySet="Clientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pedidos_Clientes" Association="Poc.Core.FK_Pedidos_Clientes">
+            <End Role="Clientes" EntitySet="Clientes" />
+            <End Role="Pedidos" EntitySet="Pedidos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pedidos_FormasPagamento" Association="Poc.Core.FK_Pedidos_FormasPagamento">
+            <End Role="FormasPagamento" EntitySet="FormasPagamento" />
+            <End Role="Pedidos" EntitySet="Pedidos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Grupos_Usuarios" Association="Poc.Core.FK_Grupos_Usuarios">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Grupos" EntitySet="Grupos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Grupos_Usuarios1" Association="Poc.Core.FK_Grupos_Usuarios1">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Grupos" EntitySet="Grupos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Produtos_Grupos" Association="Poc.Core.FK_Produtos_Grupos">
+            <End Role="Grupos" EntitySet="Grupos" />
+            <End Role="Produtos" EntitySet="Produtos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItensPedido_Pedidos" Association="Poc.Core.FK_ItensPedido_Pedidos">
+            <End Role="Pedidos" EntitySet="Pedidos" />
+            <End Role="ItensPedido" EntitySet="ItensPedido" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItensPedido_Produtos" Association="Poc.Core.FK_ItensPedido_Produtos">
+            <End Role="Produtos" EntitySet="Produtos" />
+            <End Role="ItensPedido" EntitySet="ItensPedido" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItensPedido_Usuarios" Association="Poc.Core.FK_ItensPedido_Usuarios">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="ItensPedido" EntitySet="ItensPedido" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItensPedido_Usuarios1" Association="Poc.Core.FK_ItensPedido_Usuarios1">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="ItensPedido" EntitySet="ItensPedido" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pedidos_Usuarios" Association="Poc.Core.FK_Pedidos_Usuarios">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Pedidos" EntitySet="Pedidos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pedidos_Usuarios1" Association="Poc.Core.FK_Pedidos_Usuarios1">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Pedidos" EntitySet="Pedidos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Produtos_Usuarios" Association="Poc.Core.FK_Produtos_Usuarios">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Produtos" EntitySet="Produtos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Produtos_Usuarios1" Association="Poc.Core.FK_Produtos_Usuarios1">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Produtos" EntitySet="Produtos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuarios_Usuarios" Association="Poc.Core.FK_Usuarios_Usuarios">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Usuarios1" EntitySet="Usuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuarios_Usuarios1" Association="Poc.Core.FK_Usuarios_Usuarios1">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Usuarios1" EntitySet="Usuarios" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Clientes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Cpf" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Endereco" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="DataNascimento" Type="DateTime" />
+          <Property Name="DataCriacao" Type="DateTime" Nullable="false" />
+          <Property Name="UltimaAtualizacao" Type="DateTime" />
+          <Property Name="CriadoPor" Type="Int64" Nullable="false" />
+          <Property Name="AtualizadoPor" Type="Int64" />
+          <NavigationProperty Name="Usuarios" Relationship="Poc.Core.FK_Clientes_Usuarios" FromRole="Clientes" ToRole="Usuarios" />
+          <NavigationProperty Name="Usuarios1" Relationship="Poc.Core.FK_Clientes_Usuarios1" FromRole="Clientes" ToRole="Usuarios" />
+          <NavigationProperty Name="Pedidos" Relationship="Poc.Core.FK_Pedidos_Clientes" FromRole="Clientes" ToRole="Pedidos" />
+        </EntityType>
+        <EntityType Name="FormasPagamento">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Parcelas" Type="Int32" Nullable="false" />
+          <Property Name="DataCriacao" Type="DateTime" Nullable="false" />
+          <Property Name="UltimaAtualizacao" Type="DateTime" />
+          <Property Name="CriadoPor" Type="Int64" Nullable="false" />
+          <Property Name="AtualizadoPor" Type="Int64" />
+          <NavigationProperty Name="Pedidos" Relationship="Poc.Core.FK_Pedidos_FormasPagamento" FromRole="FormasPagamento" ToRole="Pedidos" />
+        </EntityType>
+        <EntityType Name="Grupos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="DataCriacao" Type="DateTime" Nullable="false" />
+          <Property Name="UltimaAtualizacao" Type="DateTime" />
+          <Property Name="CriadoPor" Type="Int64" Nullable="false" />
+          <Property Name="AtualizadoPor" Type="Int64" />
+          <NavigationProperty Name="Usuarios" Relationship="Poc.Core.FK_Grupos_Usuarios" FromRole="Grupos" ToRole="Usuarios" />
+          <NavigationProperty Name="Usuarios1" Relationship="Poc.Core.FK_Grupos_Usuarios1" FromRole="Grupos" ToRole="Usuarios" />
+          <NavigationProperty Name="Produtos" Relationship="Poc.Core.FK_Produtos_Grupos" FromRole="Grupos" ToRole="Produtos" />
+        </EntityType>
+        <EntityType Name="ItensPedido">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Indice" Type="Int32" Nullable="false" />
+          <Property Name="ProdutoId" Type="Int64" Nullable="false" />
+          <Property Name="Quantidade" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+          <Property Name="ValorBrutoUnitario" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="DescontoUnitario" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="ValorUnitario" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="DescontoFinal" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="ValorFinal" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="DataCriacao" Type="DateTime" Nullable="false" />
+          <Property Name="UltimaAtualizacao" Type="DateTime" />
+          <Property Name="CriadoPor" Type="Int64" Nullable="false" />
+          <Property Name="AtualizadoPor" Type="Int64" />
+          <Property Name="PedidoId" Type="Int64" />
+          <NavigationProperty Name="Pedidos" Relationship="Poc.Core.FK_ItensPedido_Pedidos" FromRole="ItensPedido" ToRole="Pedidos" />
+          <NavigationProperty Name="Produtos" Relationship="Poc.Core.FK_ItensPedido_Produtos" FromRole="ItensPedido" ToRole="Produtos" />
+          <NavigationProperty Name="Usuarios" Relationship="Poc.Core.FK_ItensPedido_Usuarios" FromRole="ItensPedido" ToRole="Usuarios" />
+          <NavigationProperty Name="Usuarios1" Relationship="Poc.Core.FK_ItensPedido_Usuarios1" FromRole="ItensPedido" ToRole="Usuarios" />
+        </EntityType>
+        <EntityType Name="Pedidos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DataPedido" Type="DateTime" Nullable="false" />
+          <Property Name="FormaPagamentoId" Type="Int64" Nullable="false" />
+          <Property Name="ClienteId" Type="Int64" Nullable="false" />
+          <Property Name="ValorTotal" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+          <Property Name="Numero" Type="Int64" Nullable="false" />
+          <Property Name="DataCriacao" Type="DateTime" Nullable="false" />
+          <Property Name="UltimaAtualizacao" Type="DateTime" />
+          <Property Name="CriadoPor" Type="Int64" Nullable="false" />
+          <Property Name="AtualizadoPor" Type="Int64" />
+          <NavigationProperty Name="Clientes" Relationship="Poc.Core.FK_Pedidos_Clientes" FromRole="Pedidos" ToRole="Clientes" />
+          <NavigationProperty Name="FormasPagamento" Relationship="Poc.Core.FK_Pedidos_FormasPagamento" FromRole="Pedidos" ToRole="FormasPagamento" />
+          <NavigationProperty Name="ItensPedido" Relationship="Poc.Core.FK_ItensPedido_Pedidos" FromRole="Pedidos" ToRole="ItensPedido" />
+          <NavigationProperty Name="Usuarios" Relationship="Poc.Core.FK_Pedidos_Usuarios" FromRole="Pedidos" ToRole="Usuarios" />
+          <NavigationProperty Name="Usuarios1" Relationship="Poc.Core.FK_Pedidos_Usuarios1" FromRole="Pedidos" ToRole="Usuarios" />
+        </EntityType>
+        <EntityType Name="Produtos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="GrupoId" Type="Int64" Nullable="false" />
+          <Property Name="ValorVenda" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="QuantidadeEstoque" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="DataCriacao" Type="DateTime" Nullable="false" />
+          <Property Name="UltimaAtualizacao" Type="DateTime" />
+          <Property Name="CriadoPor" Type="Int64" Nullable="false" />
+          <Property Name="AtualizadoPor" Type="Int64" />
+          <NavigationProperty Name="Grupos" Relationship="Poc.Core.FK_Produtos_Grupos" FromRole="Produtos" ToRole="Grupos" />
+          <NavigationProperty Name="ItensPedido" Relationship="Poc.Core.FK_ItensPedido_Produtos" FromRole="Produtos" ToRole="ItensPedido" />
+          <NavigationProperty Name="Usuarios" Relationship="Poc.Core.FK_Produtos_Usuarios" FromRole="Produtos" ToRole="Usuarios" />
+          <NavigationProperty Name="Usuarios1" Relationship="Poc.Core.FK_Produtos_Usuarios1" FromRole="Produtos" ToRole="Usuarios" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Usuario" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Senha" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="DataCriacao" Type="DateTime" Nullable="false" />
+          <Property Name="UltimaAtualizacao" Type="DateTime" />
+          <Property Name="CriadoPor" Type="Int64" />
+          <Property Name="ModificadorPor" Type="Int64" />
+          <NavigationProperty Name="Clientes" Relationship="Poc.Core.FK_Clientes_Usuarios" FromRole="Usuarios" ToRole="Clientes" />
+          <NavigationProperty Name="Clientes1" Relationship="Poc.Core.FK_Clientes_Usuarios1" FromRole="Usuarios" ToRole="Clientes" />
+          <NavigationProperty Name="Grupos" Relationship="Poc.Core.FK_Grupos_Usuarios" FromRole="Usuarios" ToRole="Grupos" />
+          <NavigationProperty Name="Grupos1" Relationship="Poc.Core.FK_Grupos_Usuarios1" FromRole="Usuarios" ToRole="Grupos" />
+          <NavigationProperty Name="ItensPedido" Relationship="Poc.Core.FK_ItensPedido_Usuarios" FromRole="Usuarios" ToRole="ItensPedido" />
+          <NavigationProperty Name="ItensPedido1" Relationship="Poc.Core.FK_ItensPedido_Usuarios1" FromRole="Usuarios" ToRole="ItensPedido" />
+          <NavigationProperty Name="Pedidos" Relationship="Poc.Core.FK_Pedidos_Usuarios" FromRole="Usuarios" ToRole="Pedidos" />
+          <NavigationProperty Name="Pedidos1" Relationship="Poc.Core.FK_Pedidos_Usuarios1" FromRole="Usuarios" ToRole="Pedidos" />
+          <NavigationProperty Name="Produtos" Relationship="Poc.Core.FK_Produtos_Usuarios" FromRole="Usuarios" ToRole="Produtos" />
+          <NavigationProperty Name="Produtos1" Relationship="Poc.Core.FK_Produtos_Usuarios1" FromRole="Usuarios" ToRole="Produtos" />
+          <NavigationProperty Name="Usuarios1" Relationship="Poc.Core.FK_Usuarios_Usuarios" FromRole="Usuarios" ToRole="Usuarios1" />
+          <NavigationProperty Name="Usuarios2" Relationship="Poc.Core.FK_Usuarios_Usuarios" FromRole="Usuarios1" ToRole="Usuarios" />
+          <NavigationProperty Name="Usuarios11" Relationship="Poc.Core.FK_Usuarios_Usuarios1" FromRole="Usuarios" ToRole="Usuarios1" />
+          <NavigationProperty Name="Usuarios3" Relationship="Poc.Core.FK_Usuarios_Usuarios1" FromRole="Usuarios1" ToRole="Usuarios" />
+        </EntityType>
+        <Association Name="FK_Clientes_Usuarios">
+          <End Role="Usuarios" Type="Poc.Core.Usuarios" Multiplicity="1" />
+          <End Role="Clientes" Type="Poc.Core.Clientes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Clientes">
+              <PropertyRef Name="CriadoPor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Clientes_Usuarios1">
+          <End Role="Usuarios" Type="Poc.Core.Usuarios" Multiplicity="0..1" />
+          <End Role="Clientes" Type="Poc.Core.Clientes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Clientes">
+              <PropertyRef Name="AtualizadoPor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pedidos_Clientes">
+          <End Role="Clientes" Type="Poc.Core.Clientes" Multiplicity="1" />
+          <End Role="Pedidos" Type="Poc.Core.Pedidos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clientes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Pedidos">
+              <PropertyRef Name="ClienteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pedidos_FormasPagamento">
+          <End Role="FormasPagamento" Type="Poc.Core.FormasPagamento" Multiplicity="1" />
+          <End Role="Pedidos" Type="Poc.Core.Pedidos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FormasPagamento">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Pedidos">
+              <PropertyRef Name="FormaPagamentoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Grupos_Usuarios">
+          <End Role="Usuarios" Type="Poc.Core.Usuarios" Multiplicity="1" />
+          <End Role="Grupos" Type="Poc.Core.Grupos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Grupos">
+              <PropertyRef Name="CriadoPor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Grupos_Usuarios1">
+          <End Role="Usuarios" Type="Poc.Core.Usuarios" Multiplicity="0..1" />
+          <End Role="Grupos" Type="Poc.Core.Grupos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Grupos">
+              <PropertyRef Name="AtualizadoPor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Produtos_Grupos">
+          <End Role="Grupos" Type="Poc.Core.Grupos" Multiplicity="1" />
+          <End Role="Produtos" Type="Poc.Core.Produtos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Grupos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Produtos">
+              <PropertyRef Name="GrupoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ItensPedido_Pedidos">
+          <End Role="Pedidos" Type="Poc.Core.Pedidos" Multiplicity="0..1" />
+          <End Role="ItensPedido" Type="Poc.Core.ItensPedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pedidos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ItensPedido">
+              <PropertyRef Name="PedidoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ItensPedido_Produtos">
+          <End Role="Produtos" Type="Poc.Core.Produtos" Multiplicity="1" />
+          <End Role="ItensPedido" Type="Poc.Core.ItensPedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Produtos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ItensPedido">
+              <PropertyRef Name="ProdutoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ItensPedido_Usuarios">
+          <End Role="Usuarios" Type="Poc.Core.Usuarios" Multiplicity="1" />
+          <End Role="ItensPedido" Type="Poc.Core.ItensPedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ItensPedido">
+              <PropertyRef Name="CriadoPor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ItensPedido_Usuarios1">
+          <End Role="Usuarios" Type="Poc.Core.Usuarios" Multiplicity="0..1" />
+          <End Role="ItensPedido" Type="Poc.Core.ItensPedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ItensPedido">
+              <PropertyRef Name="AtualizadoPor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pedidos_Usuarios">
+          <End Role="Usuarios" Type="Poc.Core.Usuarios" Multiplicity="1" />
+          <End Role="Pedidos" Type="Poc.Core.Pedidos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Pedidos">
+              <PropertyRef Name="CriadoPor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pedidos_Usuarios1">
+          <End Role="Usuarios" Type="Poc.Core.Usuarios" Multiplicity="0..1" />
+          <End Role="Pedidos" Type="Poc.Core.Pedidos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Pedidos">
+              <PropertyRef Name="AtualizadoPor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Produtos_Usuarios">
+          <End Role="Usuarios" Type="Poc.Core.Usuarios" Multiplicity="1" />
+          <End Role="Produtos" Type="Poc.Core.Produtos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Produtos">
+              <PropertyRef Name="CriadoPor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Produtos_Usuarios1">
+          <End Role="Usuarios" Type="Poc.Core.Usuarios" Multiplicity="0..1" />
+          <End Role="Produtos" Type="Poc.Core.Produtos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Produtos">
+              <PropertyRef Name="AtualizadoPor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Usuarios_Usuarios">
+          <End Role="Usuarios" Type="Poc.Core.Usuarios" Multiplicity="0..1" />
+          <End Role="Usuarios1" Type="Poc.Core.Usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Usuarios1">
+              <PropertyRef Name="CriadoPor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Usuarios_Usuarios1">
+          <End Role="Usuarios" Type="Poc.Core.Usuarios" Multiplicity="0..1" />
+          <End Role="Usuarios1" Type="Poc.Core.Usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Usuarios1">
+              <PropertyRef Name="ModificadorPor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PocCoreStoreContainer" CdmEntityContainer="pocEntities">
+          <EntitySetMapping Name="Clientes">
+            <EntityTypeMapping TypeName="Poc.Core.Clientes">
+              <MappingFragment StoreEntitySet="Clientes">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Cpf" ColumnName="Cpf" />
+                <ScalarProperty Name="Endereco" ColumnName="Endereco" />
+                <ScalarProperty Name="DataNascimento" ColumnName="DataNascimento" />
+                <ScalarProperty Name="DataCriacao" ColumnName="DataCriacao" />
+                <ScalarProperty Name="UltimaAtualizacao" ColumnName="UltimaAtualizacao" />
+                <ScalarProperty Name="CriadoPor" ColumnName="CriadoPor" />
+                <ScalarProperty Name="AtualizadoPor" ColumnName="AtualizadoPor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FormasPagamento">
+            <EntityTypeMapping TypeName="Poc.Core.FormasPagamento">
+              <MappingFragment StoreEntitySet="FormasPagamento">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Parcelas" ColumnName="Parcelas" />
+                <ScalarProperty Name="DataCriacao" ColumnName="DataCriacao" />
+                <ScalarProperty Name="UltimaAtualizacao" ColumnName="UltimaAtualizacao" />
+                <ScalarProperty Name="CriadoPor" ColumnName="CriadoPor" />
+                <ScalarProperty Name="AtualizadoPor" ColumnName="AtualizadoPor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Grupos">
+            <EntityTypeMapping TypeName="Poc.Core.Grupos">
+              <MappingFragment StoreEntitySet="Grupos">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="DataCriacao" ColumnName="DataCriacao" />
+                <ScalarProperty Name="UltimaAtualizacao" ColumnName="UltimaAtualizacao" />
+                <ScalarProperty Name="CriadoPor" ColumnName="CriadoPor" />
+                <ScalarProperty Name="AtualizadoPor" ColumnName="AtualizadoPor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ItensPedido">
+            <EntityTypeMapping TypeName="Poc.Core.ItensPedido">
+              <MappingFragment StoreEntitySet="ItensPedido">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Indice" ColumnName="Indice" />
+                <ScalarProperty Name="ProdutoId" ColumnName="ProdutoId" />
+                <ScalarProperty Name="Quantidade" ColumnName="Quantidade" />
+                <ScalarProperty Name="ValorBrutoUnitario" ColumnName="ValorBrutoUnitario" />
+                <ScalarProperty Name="DescontoUnitario" ColumnName="DescontoUnitario" />
+                <ScalarProperty Name="ValorUnitario" ColumnName="ValorUnitario" />
+                <ScalarProperty Name="DescontoFinal" ColumnName="DescontoFinal" />
+                <ScalarProperty Name="ValorFinal" ColumnName="ValorFinal" />
+                <ScalarProperty Name="DataCriacao" ColumnName="DataCriacao" />
+                <ScalarProperty Name="UltimaAtualizacao" ColumnName="UltimaAtualizacao" />
+                <ScalarProperty Name="CriadoPor" ColumnName="CriadoPor" />
+                <ScalarProperty Name="AtualizadoPor" ColumnName="AtualizadoPor" />
+                <ScalarProperty Name="PedidoId" ColumnName="PedidoId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pedidos">
+            <EntityTypeMapping TypeName="Poc.Core.Pedidos">
+              <MappingFragment StoreEntitySet="Pedidos">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DataPedido" ColumnName="DataPedido" />
+                <ScalarProperty Name="FormaPagamentoId" ColumnName="FormaPagamentoId" />
+                <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
+                <ScalarProperty Name="ValorTotal" ColumnName="ValorTotal" />
+                <ScalarProperty Name="Numero" ColumnName="Numero" />
+                <ScalarProperty Name="DataCriacao" ColumnName="DataCriacao" />
+                <ScalarProperty Name="UltimaAtualizacao" ColumnName="UltimaAtualizacao" />
+                <ScalarProperty Name="CriadoPor" ColumnName="CriadoPor" />
+                <ScalarProperty Name="AtualizadoPor" ColumnName="AtualizadoPor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Produtos">
+            <EntityTypeMapping TypeName="Poc.Core.Produtos">
+              <MappingFragment StoreEntitySet="Produtos">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="GrupoId" ColumnName="GrupoId" />
+                <ScalarProperty Name="ValorVenda" ColumnName="ValorVenda" />
+                <ScalarProperty Name="QuantidadeEstoque" ColumnName="QuantidadeEstoque" />
+                <ScalarProperty Name="DataCriacao" ColumnName="DataCriacao" />
+                <ScalarProperty Name="UltimaAtualizacao" ColumnName="UltimaAtualizacao" />
+                <ScalarProperty Name="CriadoPor" ColumnName="CriadoPor" />
+                <ScalarProperty Name="AtualizadoPor" ColumnName="AtualizadoPor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="Poc.Core.Usuarios">
+              <MappingFragment StoreEntitySet="Usuarios">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+                <ScalarProperty Name="Senha" ColumnName="Senha" />
+                <ScalarProperty Name="DataCriacao" ColumnName="DataCriacao" />
+                <ScalarProperty Name="UltimaAtualizacao" ColumnName="UltimaAtualizacao" />
+                <ScalarProperty Name="CriadoPor" ColumnName="CriadoPor" />
+                <ScalarProperty Name="ModificadorPor" ColumnName="ModificadorPor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="ModeloExemplo">
+        <EntityTypeShape EntityType="Poc.Core.Clientes" Width="1.5" PointX="3" PointY="2.25" Height="3.3263964843749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="Poc.Core.FormasPagamento" Width="1.5" PointX="5.5" PointY="8.375" Height="2.5571907552083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="Poc.Core.Grupos" Width="1.5" PointX="3" PointY="6.25" Height="2.7494921874999996" IsExpanded="true" />
+        <EntityTypeShape EntityType="Poc.Core.ItensPedido" Width="2.125" PointX="10.5" PointY="3.375" Height="4.480205078125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Poc.Core.Pedidos" Width="1.5" PointX="5.25" PointY="3.25" Height="3.9033007812499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="Poc.Core.Produtos" Width="1.5" PointX="8.25" PointY="4.25" Height="3.5186979166666674" IsExpanded="true" />
+        <EntityTypeShape EntityType="Poc.Core.Usuarios" Width="1.5" PointX="0.75" PointY="3" Height="5.2494108072916674" IsExpanded="true" />
+        <AssociationConnector Association="Poc.Core.FK_Clientes_Usuarios" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="4.2881982421875" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="4.2881982421874989" />
+          <ConnectorPoint PointX="2.8333333333333335" PointY="4.2881982421875" />
+          <ConnectorPoint PointX="3" PointY="4.2881982421875" />
+        </AssociationConnector>
+        <AssociationConnector Association="Poc.Core.FK_Clientes_Usuarios1" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="3.58159912109375" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="3.581599121093749" />
+          <ConnectorPoint PointX="2.8333333333333335" PointY="3.58159912109375" />
+          <ConnectorPoint PointX="3" PointY="3.58159912109375" />
+        </AssociationConnector>
+        <AssociationConnector Association="Poc.Core.FK_Pedidos_Clientes" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="4.4131982421875" />
+          <ConnectorPoint PointX="5.25" PointY="4.4131982421875" />
+        </AssociationConnector>
+        <AssociationConnector Association="Poc.Core.FK_Pedidos_FormasPagamento" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.125" PointY="8.375" />
+          <ConnectorPoint PointX="6.125" PointY="7.15330078125" />
+        </AssociationConnector>
+        <AssociationConnector Association="Poc.Core.FK_Grupos_Usuarios" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="7.2497054036458337" />
+          <ConnectorPoint PointX="2.6041666666666665" PointY="7.2497054036458328" />
+          <ConnectorPoint PointX="2.8333333333333335" PointY="7.2497054036458337" />
+          <ConnectorPoint PointX="3" PointY="7.2497054036458337" />
+        </AssociationConnector>
+        <AssociationConnector Association="Poc.Core.FK_Grupos_Usuarios1" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="6.6873527018229169" />
+          <ConnectorPoint PointX="2.6041666666666665" PointY="6.687352701822916" />
+          <ConnectorPoint PointX="2.8333333333333335" PointY="6.6873527018229169" />
+          <ConnectorPoint PointX="3" PointY="6.6873527018229169" />
+        </AssociationConnector>
+        <AssociationConnector Association="Poc.Core.FK_Produtos_Grupos" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="7.4922493489583335" />
+          <ConnectorPoint PointX="6.041666666666667" PointY="7.4922493489583326" />
+          <ConnectorPoint PointX="6.208333333333333" PointY="7.4922493489583335" />
+          <ConnectorPoint PointX="8.25" PointY="7.4922493489583335" />
+        </AssociationConnector>
+        <AssociationConnector Association="Poc.Core.FK_ItensPedido_Pedidos" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="3.78125" />
+          <ConnectorPoint PointX="10.5" PointY="3.78125" />
+        </AssociationConnector>
+        <AssociationConnector Association="Poc.Core.FK_ItensPedido_Produtos" ManuallyRouted="false">
+          <ConnectorPoint PointX="9.75" PointY="6.0093489583333337" />
+          <ConnectorPoint PointX="10.5" PointY="6.0093489583333337" />
+        </AssociationConnector>
+        <AssociationConnector Association="Poc.Core.FK_ItensPedido_Usuarios" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="4.9727558135986323" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="4.9727558135986314" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="4.9727558135986323" />
+          <ConnectorPoint PointX="2.75" PointY="4.9727558135986323" />
+          <ConnectorPoint PointX="2.75" PointY="2" />
+          <ConnectorPoint PointX="11.002601416666666" PointY="1.9999999999999993" />
+          <ConnectorPoint PointX="11.169268083333334" PointY="2" />
+          <ConnectorPoint PointX="11.7343735" PointY="2" />
+          <ConnectorPoint PointX="11.7343735" PointY="3.375" />
+        </AssociationConnector>
+        <AssociationConnector Association="Poc.Core.FK_ItensPedido_Usuarios1" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="7.7808101054687446" />
+          <ConnectorPoint PointX="2.6875" PointY="7.7808101054687446" />
+          <ConnectorPoint PointX="2.6875" PointY="1.75" />
+          <ConnectorPoint PointX="11.08593475" PointY="1.75" />
+          <ConnectorPoint PointX="11.08593475" PointY="3.375" />
+        </AssociationConnector>
+        <AssociationConnector Association="Poc.Core.FK_Pedidos_Usuarios" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="5.8007302856445309" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="5.80073028564453" />
+          <ConnectorPoint PointX="2.7708333333333335" PointY="5.8007302856445309" />
+          <ConnectorPoint PointX="5.25" PointY="5.8007302856445309" />
+        </AssociationConnector>
+        <AssociationConnector Association="Poc.Core.FK_Pedidos_Usuarios1" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="5.6573133850097648" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="5.6573133850097639" />
+          <ConnectorPoint PointX="2.7708333333333335" PointY="5.6573133850097648" />
+          <ConnectorPoint PointX="5.25" PointY="5.6573133850097648" />
+        </AssociationConnector>
+        <AssociationConnector Association="Poc.Core.FK_Produtos_Usuarios" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.5" PointY="8.2494108072916674" />
+          <ConnectorPoint PointX="1.5" PointY="8.4994108072916674" />
+          <ConnectorPoint PointX="1.645128205128205" PointY="8.4994108072916674" />
+          <ConnectorPoint PointX="1.8117948717948715" PointY="8.4994108072916674" />
+          <ConnectorPoint PointX="2.75" PointY="8.4994108072916674" />
+          <ConnectorPoint PointX="2.75" PointY="6" />
+          <ConnectorPoint PointX="5" PointY="6" />
+          <ConnectorPoint PointX="5" PointY="7.27830078125" />
+          <ConnectorPoint PointX="6.041666666666667" PointY="7.2783007812499987" />
+          <ConnectorPoint PointX="6.208333333333333" PointY="7.27830078125" />
+          <ConnectorPoint PointX="7.666666666666667" PointY="7.2783007812499987" />
+          <ConnectorPoint PointX="7.833333333333333" PointY="7.27830078125" />
+          <ConnectorPoint PointX="7.875" PointY="7.27830078125" />
+          <ConnectorPoint PointX="7.875" PointY="5.8398726744791656" />
+          <ConnectorPoint PointX="8.25" PointY="5.8398726744791656" />
+        </AssociationConnector>
+        <AssociationConnector Association="Poc.Core.FK_Produtos_Usuarios1" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.5" PointY="3" />
+          <ConnectorPoint PointX="1.5" PointY="2.75" />
+          <ConnectorPoint PointX="2.625" PointY="2.75" />
+          <ConnectorPoint PointX="2.625" PointY="6" />
+          <ConnectorPoint PointX="4.9375" PointY="6" />
+          <ConnectorPoint PointX="4.9375" PointY="7.40330078125" />
+          <ConnectorPoint PointX="6.041666666666667" PointY="7.4033007812499987" />
+          <ConnectorPoint PointX="6.208333333333333" PointY="7.40330078125" />
+          <ConnectorPoint PointX="7.75" PointY="7.40330078125" />
+          <ConnectorPoint PointX="7.75" PointY="5.0136843372395816" />
+          <ConnectorPoint PointX="8.25" PointY="5.0136843372395816" />
+        </AssociationConnector>
+        <AssociationConnector Association="Poc.Core.FK_Usuarios_Usuarios" ManuallyRouted="false">
+          <ConnectorPoint PointX="0.75" PointY="4.800954427083334" />
+          <ConnectorPoint PointX="0.5" PointY="4.800954427083334" />
+          <ConnectorPoint PointX="0.5" PointY="6.4876826171875006" />
+          <ConnectorPoint PointX="0.75" PointY="6.4876826171875006" />
+        </AssociationConnector>
+        <AssociationConnector Association="Poc.Core.FK_Usuarios_Usuarios1" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.2819230769230767" PointY="8.2494108072916674" />
+          <ConnectorPoint PointX="1.2819230769230767" PointY="8.7494108072916674" />
+          <ConnectorPoint PointX="1.7284615384615383" PointY="8.7494108072916674" />
+          <ConnectorPoint PointX="1.7284615384615383" PointY="8.2494108072916674" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
