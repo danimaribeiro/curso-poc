@@ -11,6 +11,8 @@ namespace Poc.Core
 {
     public partial class BaseForm : Base
     {
+        public object ObjetoCriado { get; set; }
+
         public BaseForm()
         {
             InitializeComponent();

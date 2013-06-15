@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Poc.Cliente
 {
-    public partial class CadastroCliente : Form
+    public partial class CadastroCliente : Core.BaseForm
     {
         protected Core.Clientes Cliente { get; set; }
 
@@ -24,6 +24,12 @@ namespace Poc.Cliente
             this.Cliente = cliente;
         }
 
+        public CadastroCliente(Core.Clientes cliente, string mensagem)
+        {
+            InitializeComponent();
+            this.Cliente = cliente;
+        }
+
         private void CadastroCliente_Load(object sender, EventArgs e)
         {
             if (this.Cliente != null)
@@ -31,6 +37,12 @@ namespace Poc.Cliente
                 txtNome.Text = this.Cliente.Nome;
                 txtCpf.Text = this.Cliente.Cpf;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.ObjetoCriado = new Core.Usuarios() { Id  = 1 };
+            this.Close();
         }
     }
 }

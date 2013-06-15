@@ -33,9 +33,11 @@
             this.clientesCadastradosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.novoClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relatóriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pesquisaDeClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pedidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.novoPedidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relatórioDePedidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.relatorioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,7 +57,9 @@
             this.clientesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.clientesCadastradosToolStripMenuItem,
             this.novoClienteToolStripMenuItem,
-            this.relatóriosToolStripMenuItem});
+            this.relatóriosToolStripMenuItem,
+            this.pesquisaDeClientesToolStripMenuItem,
+            this.relatorioToolStripMenuItem});
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
             this.clientesToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.clientesToolStripMenuItem.Text = "Clientes";
@@ -81,6 +85,13 @@
             this.relatóriosToolStripMenuItem.Text = "Relatórios";
             this.relatóriosToolStripMenuItem.Click += new System.EventHandler(this.relatóriosToolStripMenuItem_Click);
             // 
+            // pesquisaDeClientesToolStripMenuItem
+            // 
+            this.pesquisaDeClientesToolStripMenuItem.Name = "pesquisaDeClientesToolStripMenuItem";
+            this.pesquisaDeClientesToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.pesquisaDeClientesToolStripMenuItem.Text = "Pesquisa de clientes";
+            this.pesquisaDeClientesToolStripMenuItem.Click += new System.EventHandler(this.pesquisaDeClientesToolStripMenuItem_Click);
+            // 
             // pedidosToolStripMenuItem
             // 
             this.pedidosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -102,6 +113,13 @@
             this.relatórioDePedidosToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.relatórioDePedidosToolStripMenuItem.Text = "Relatório de pedidos";
             this.relatórioDePedidosToolStripMenuItem.Click += new System.EventHandler(this.relatórioDePedidosToolStripMenuItem_Click);
+            // 
+            // relatorioToolStripMenuItem
+            // 
+            this.relatorioToolStripMenuItem.Name = "relatorioToolStripMenuItem";
+            this.relatorioToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.relatorioToolStripMenuItem.Text = "Relatorio";
+            this.relatorioToolStripMenuItem.Click += new System.EventHandler(this.relatorioToolStripMenuItem_Click);
             // 
             // FormularioPrincipal
             // 
@@ -131,6 +149,8 @@
         private System.Windows.Forms.ToolStripMenuItem pedidosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem novoPedidoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem relatórioDePedidosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pesquisaDeClientesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem relatorioToolStripMenuItem;
     }
 }
 

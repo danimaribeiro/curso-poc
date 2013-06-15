@@ -30,38 +30,45 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.pocDataSet = new Poc.Pedidos.pocDataSet();
             this.PedidosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pocDataSet = new Poc.Pedidos.pocDataSet();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.PedidosTableAdapter = new Poc.Pedidos.pocDataSetTableAdapters.PedidosTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.pocDataSet)).BeginInit();
+            this.pocDataSet1 = new Poc.Pedidos.pocDataSet1();
             ((System.ComponentModel.ISupportInitialize)(this.PedidosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pocDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pocDataSet1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // reportViewer1
-            // 
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.PedidosBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Poc.Pedidos.RelatorioTodosPedidos.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(12, 12);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(808, 432);
-            this.reportViewer1.TabIndex = 0;
-            // 
-            // pocDataSet
-            // 
-            this.pocDataSet.DataSetName = "pocDataSet";
-            this.pocDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // PedidosBindingSource
             // 
             this.PedidosBindingSource.DataMember = "Pedidos";
             this.PedidosBindingSource.DataSource = this.pocDataSet;
             // 
+            // pocDataSet
+            // 
+            this.pocDataSet.DataSetName = "pocDataSet";
+            this.pocDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // reportViewer1
+            // 
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.PedidosBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Poc.Pedidos.Report1.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(12, 12);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.Size = new System.Drawing.Size(808, 432);
+            this.reportViewer1.TabIndex = 0;
+            // 
             // PedidosTableAdapter
             // 
             this.PedidosTableAdapter.ClearBeforeFill = true;
+            // 
+            // pocDataSet1
+            // 
+            this.pocDataSet1.DataSetName = "pocDataSet1";
+            this.pocDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // RelatorioPedidos
             // 
@@ -72,8 +79,9 @@
             this.Name = "RelatorioPedidos";
             this.Text = "RelatorioPedidos";
             this.Load += new System.EventHandler(this.RelatorioPedidos_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pocDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PedidosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pocDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pocDataSet1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -84,5 +92,6 @@
         private System.Windows.Forms.BindingSource PedidosBindingSource;
         private pocDataSet pocDataSet;
         private pocDataSetTableAdapters.PedidosTableAdapter PedidosTableAdapter;
+        private pocDataSet1 pocDataSet1;
     }
 }

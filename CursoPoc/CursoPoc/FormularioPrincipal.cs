@@ -61,7 +61,7 @@ namespace CursoPoc
             if (t != null)
             {
                 var user = new Poc.Core.Clientes() { Nome = "Danimar", Cpf = "05565" };
-                System.Windows.Forms.Form f = (System.Windows.Forms.Form)Activator.CreateInstance(t, user);
+                Poc.Core.BaseForm f = (Poc.Core.BaseForm)Activator.CreateInstance(t, user, "mensagem");
                 f.MdiParent = this;
                 f.WindowState = FormWindowState.Maximized;
                 if (modal)
@@ -74,6 +74,24 @@ namespace CursoPoc
         private void relatórioDePedidosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new Poc.Pedidos.RelatorioPedidos().ShowDialog();
+        }
+
+        private void pesquisaDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new Poc.Cliente.PesquisaCliente();
+            form.SelecionouObjeto += new Poc.Cliente.PesquisaCliente.Selecionado(form_SelecionouObjeto);
+            form.Show();
+        }
+
+        void form_SelecionouObjeto(long id, Form formulario)
+        {
+            formulario.Close();
+            MessageBox.Show(id.ToString());
+        }
+
+        private void relatorioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Poc.Cliente.NovoFormularioRelatorio().ShowDialog();
         }
 
     }

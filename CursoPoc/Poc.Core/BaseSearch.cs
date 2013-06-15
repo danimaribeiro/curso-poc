@@ -15,5 +15,22 @@ namespace Poc.Core
         {
             InitializeComponent();
         }
+
+      
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Confirmar(sender, e);
+        }
+
+        public virtual void Confirmar(object sender, EventArgs e)
+        {
+                    }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Imprimiu");
+        }
+
     }
 }

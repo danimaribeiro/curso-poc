@@ -12,11 +12,9 @@ namespace Poc.Core
     public partial class Base : Form
     {
         protected Contexto.DatabaseContexto ContextoBancoDados { get; set; }
-
-
-        private Core.Usuarios _usuario;
-
-        protected Core.Usuarios Usuario
+        
+        private static Core.Usuarios _usuario;
+        protected static Core.Usuarios Usuario
         {
             get { return _usuario; }            
         }
