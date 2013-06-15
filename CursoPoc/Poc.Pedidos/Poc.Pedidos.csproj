@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{2E467DB3-E4EA-4C7B-87B5-D0AB235734BC}</ProjectGuid>
+    <ProjectGuid>{9D379E62-8240-4C67-8A1E-DBDF6DAA80D7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Poc.Cliente</RootNamespace>
-    <AssemblyName>Poc.Cliente</AssemblyName>
+    <RootNamespace>Poc.Pedidos</RootNamespace>
+    <AssemblyName>Poc.Pedidos</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,15 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
@@ -50,46 +45,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CadastroCliente.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CadastroCliente.Designer.cs">
-      <DependentUpon>CadastroCliente.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GridClientes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GridClientes.Designer.cs">
-      <DependentUpon>GridClientes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PesquisaCliente.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PesquisaCliente.Designer.cs">
-      <DependentUpon>PesquisaCliente.cs</DependentUpon>
-    </Compile>
     <Compile Include="pocDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>pocDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="RelatorioClientes.cs">
+    <Compile Include="RelatorioPedidos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RelatorioClientes.Designer.cs">
-      <DependentUpon>RelatorioClientes.cs</DependentUpon>
+    <Compile Include="RelatorioPedidos.Designer.cs">
+      <DependentUpon>RelatorioPedidos.cs</DependentUpon>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="RelatorioPedidos.resx">
+      <DependentUpon>RelatorioPedidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RelatorioTodosPedidos.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Poc.Core\Poc.Core.csproj">
@@ -98,24 +76,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="CadastroCliente.resx">
-      <DependentUpon>CadastroCliente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GridClientes.resx">
-      <DependentUpon>GridClientes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RelatorioClientes.resx">
-      <DependentUpon>RelatorioClientes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RelatorioTodosClientes.rdlc" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="app.config" />
-    <None Include="packages.config" />
     <None Include="pocDataSet.xsc">
       <DependentUpon>pocDataSet.xsd</DependentUpon>
     </None>
@@ -131,9 +92,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\8427_32x32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

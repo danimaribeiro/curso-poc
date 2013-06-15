@@ -9,11 +9,72 @@ using System.Windows.Forms;
 
 namespace CursoPoc
 {
-    public partial class FormularioPrincipal : Form
+    public partial class FormularioPrincipal : Poc.Core.Base
     {
         public FormularioPrincipal()
         {
             InitializeComponent();
         }
+
+        private void FormularioPrincipal_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                if (new Login().ShowDialog() != System.Windows.Forms.DialogResult.OK)
+                    this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                this.Close();
+            }
+        }
+
+        private void relatóriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Poc.Cliente.RelatorioClientes().ShowDialog();
+        }
+
+        private void clientesCadastradosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var gridClientes = new Poc.Cliente.GridClientes();
+            gridClientes.MdiParent = this;
+            gridClientes.WindowState = FormWindowState.Maximized;
+            gridClientes.Show();
+        }
+
+        private void novoClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioDinamicamente("Poc.Cliente.CadastroCliente", // Namespace completo
+                "Poc.Cliente", // Root Namespace
+                "1.0.0.0",
+                "neutral",
+                "null",
+                false);
+        }
+
+
+        private void AbrirFormularioDinamicamente(string classe, string namespace_pai,
+                    string versaoAssembly, string cultura, string token, bool modal)
+        {
+            Type t = Type.GetType(classe + "," + namespace_pai + ", Version=" + versaoAssembly + ", Culture=" + cultura + ", PublicKeyToken=" + token);
+            if (t != null)
+            {
+                var user = new Poc.Core.Clientes() { Nome = "Danimar", Cpf = "05565" };
+                System.Windows.Forms.Form f = (System.Windows.Forms.Form)Activator.CreateInstance(t, user);
+                f.MdiParent = this;
+                f.WindowState = FormWindowState.Maximized;
+                if (modal)
+                    f.ShowDialog();
+                else
+                    f.Show();
+            }
+        }
+
+        private void relatórioDePedidosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Poc.Pedidos.RelatorioPedidos().ShowDialog();
+        }
+
     }
 }

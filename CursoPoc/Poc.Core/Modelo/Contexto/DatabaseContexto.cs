@@ -10,7 +10,7 @@ namespace Poc.Core.Contexto
     {
         static DatabaseContexto()
         {
-            Database.SetInitializer<DatabaseContexto>(null);
+            Database.SetInitializer<DatabaseContexto>(new System.Data.Entity.CreateDatabaseIfNotExists<DatabaseContexto>());
         }
 
         public DatabaseContexto()
