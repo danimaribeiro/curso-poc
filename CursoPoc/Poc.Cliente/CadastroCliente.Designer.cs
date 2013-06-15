@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.txtNome = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtCpf = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.txtCpf = new Poc.Cliente.TextboxObrigatorio();
+            this.txtNome = new Poc.Cliente.TextboxObrigatorio();
             this.SuspendLayout();
             // 
             // label1
@@ -44,13 +44,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nome";
             // 
-            // txtNome
-            // 
-            this.txtNome.Location = new System.Drawing.Point(108, 42);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(210, 20);
-            this.txtNome.TabIndex = 1;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -59,13 +52,6 @@
             this.label2.Size = new System.Drawing.Size(23, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Cpf";
-            // 
-            // txtCpf
-            // 
-            this.txtCpf.Location = new System.Drawing.Point(108, 93);
-            this.txtCpf.Name = "txtCpf";
-            this.txtCpf.Size = new System.Drawing.Size(210, 20);
-            this.txtCpf.TabIndex = 3;
             // 
             // button1
             // 
@@ -77,15 +63,35 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // txtCpf
+            // 
+            this.txtCpf.Location = new System.Drawing.Point(92, 89);
+            this.txtCpf.MensagemErro = "Informe o cpf";
+            this.txtCpf.Name = "txtCpf";
+            this.txtCpf.Requerido = false;
+            this.txtCpf.Size = new System.Drawing.Size(185, 29);
+            this.txtCpf.TabIndex = 6;
+            this.txtCpf.Validacao = null;
+            // 
+            // txtNome
+            // 
+            this.txtNome.Location = new System.Drawing.Point(92, 40);
+            this.txtNome.MensagemErro = "Campo obrigatório";
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Requerido = false;
+            this.txtNome.Size = new System.Drawing.Size(185, 29);
+            this.txtNome.TabIndex = 5;
+            this.txtNome.Validacao = null;
+            // 
             // CadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(403, 262);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.txtCpf);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.txtNome);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "CadastroCliente";
             this.Text = "CadastroCliente";
@@ -98,9 +104,9 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtCpf;
         private System.Windows.Forms.Button button1;
+        private TextboxObrigatorio txtNome;
+        private TextboxObrigatorio txtCpf;
     }
 }

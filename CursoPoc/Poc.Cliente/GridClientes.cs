@@ -28,12 +28,22 @@ namespace Poc.Cliente
 
         private void CarregarDados()
         {
-            var clientes = from p in this.ContextoBancoDados.Clientes
-                           select new { Id = p.Id, Nome = p.Nome, DataNascimento = p.DataNascimento, Endereco = p.Endereco };
+            System.Threading.Tasks.Task.Factory.StartNew(() =>
+            {
+                var clientes = from p in this.ContextoBancoDados.Clientes
+                               select new { Id = p.Id, Nome = p.Nome, DataNascimento = p.DataNascimento, Endereco = p.Endereco };
 
-            if (!string.IsNullOrWhiteSpace(txtNome.Text))
-                clientes = clientes.Where(x => x.Nome.StartsWith(txtNome.Text));
-            dataGridView1.DataSource = clientes.ToList();
+                if (!string.IsNullOrWhiteSpace(txtNome.Text))
+                    clientes = clientes.Where(x => x.Nome.StartsWith(txtNome.Text));
+
+                clientes = clientes.OrderBy(x => x.Nome).Take(2).Skip(0);
+
+                var listaclientes = clientes.ToList();
+                dataGridView1.BeginInvoke(new Action(() =>
+                {
+                    dataGridView1.DataSource = listaclientes;
+                }));
+            });
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -47,5 +57,6 @@ namespace Poc.Cliente
                 cadastro.Show();
             }
         }
+
     }
 }

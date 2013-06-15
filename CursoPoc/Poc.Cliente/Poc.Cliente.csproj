@@ -101,6 +101,12 @@
     <Compile Include="RelatorioClientes.Designer.cs">
       <DependentUpon>RelatorioClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="TextboxObrigatorio.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TextboxObrigatorio.Designer.cs">
+      <DependentUpon>TextboxObrigatorio.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Poc.Core\Poc.Core.csproj">
@@ -130,6 +136,9 @@
       <DependentUpon>RelatorioClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RelatorioTodosClientes.rdlc" />
+    <EmbeddedResource Include="TextboxObrigatorio.resx">
+      <DependentUpon>TextboxObrigatorio.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
